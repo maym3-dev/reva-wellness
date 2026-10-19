@@ -1,7 +1,7 @@
 /**
- * Booking domain model. Mirrors the shape SHA's engine works with
- * (destinations → programmes → rooms → packs → guests → payment) so the
- * mock provider can later be swapped for a PMS / channel-manager backend.
+ * Booking domain model (destinations → programmes → rooms → packs → guests →
+ * payment), kept generic so the mock provider can later be swapped for a
+ * PMS / channel-manager backend.
  */
 
 export type ISODate = string; // "YYYY-MM-DD"
@@ -127,7 +127,7 @@ export type PriceBreakdown = {
   nights: number;
   roomPerNight: number;
   programmesPerNight: number;
-  /** Room + programmes, per night (SHA's "Fixed rate"). */
+  /** Room + programmes, per night ("Fixed rate"). */
   fixedRatePerNight: number;
   lines: PriceLine[];
   subtotal: number;

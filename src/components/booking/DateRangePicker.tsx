@@ -9,7 +9,7 @@ const DAY_NAMES = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 const MAX_MONTHS_AHEAD = 18;
 
 /**
- * SHA date selector: a trigger showing "Check-in → Check-out" that opens a
+ * Date selector: a trigger showing "Check-in → Check-out" that opens a
  * two-month calendar (one on phones). First click = check-in, second =
  * check-out; nights below the minimum stay are disabled while choosing.
  */

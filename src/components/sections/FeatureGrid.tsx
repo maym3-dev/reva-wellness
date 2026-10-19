@@ -8,14 +8,14 @@ type Props = {
   heading?: Heading;
   text?: string;
   items: Feature[];
-  /** cards = icon/number tiles (SHA "beneficios"), list = two-column checklist (amenities) */
+  /** cards = icon/number tiles (benefits), list = two-column checklist (amenities) */
   variant?: "cards" | "list";
   columns?: 2 | 3 | 4;
   tone?: "white" | "light" | "dark";
   numbered?: boolean;
 };
 
-/** SHA benefits grid: line-title header, tiles rising in with a staggered delay. */
+/** Benefits grid: line-title header, tiles rising in with a staggered delay. */
 export default function FeatureGrid({
   lineTitle,
   heading,

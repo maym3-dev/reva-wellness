@@ -13,7 +13,7 @@ function youTubeId(url: string) {
 }
 
 /**
- * Blurred full-screen video lightbox (SHA big-one / experts modal).
+ * Blurred full-screen video lightbox (media split / experts modal).
  * Accepts self-hosted MP4 or YouTube URLs. Esc or backdrop click closes.
  */
 export default function VideoModal({ url, onClose }: { url: string | null; onClose: () => void }) {

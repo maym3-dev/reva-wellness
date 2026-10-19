@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------
    Header — transparent over the hero, white after 50px of scroll,
-   hides on scroll-down below 1024px (SHA behaviour).
+   hides on scroll-down below 1024px.
    ------------------------------------------------------------------ */
 .site-header {
   position: fixed;

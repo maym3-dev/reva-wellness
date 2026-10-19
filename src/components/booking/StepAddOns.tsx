@@ -5,7 +5,7 @@ import { formatMoney } from "@/lib/booking/pricing";
 import { useBooking } from "@/lib/booking/store";
 import { CheckIcon } from "@/components/ui/Icons";
 
-/** Step 3 — optional enhancements, added per guest (SHA "Boost your results"). */
+/** Step 3 — optional enhancements, added per guest. */
 export default function StepAddOns({ onContinue }: { onContinue: () => void }) {
   const { draft, content, toggleAddOn } = useBooking();
   const [expanded, setExpanded] = useState<string | null>(null);

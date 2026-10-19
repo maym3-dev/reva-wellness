@@ -5,7 +5,7 @@ import { rooms } from "./data";
 /**
  * Deterministic fake inventory: the same date always returns the same
  * availability, so prices don't jump between steps. A real provider would read
- * this from the PMS (SHA's `sha_month` returns the same per-night shape).
+ * this from the PMS in the same per-night shape.
  */
 
 const hash = (s: string) => {

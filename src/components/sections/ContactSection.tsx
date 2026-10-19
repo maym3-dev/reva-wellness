@@ -6,7 +6,7 @@ import "./contact.css";
 export type Office = { name: string; lines: string[]; phone?: string; whatsapp?: string; email?: string };
 
 /**
- * SHA "contact-form": intro + form on the left, offices on the right.
+ * Contact form: intro + form on the left, offices on the right.
  * UI only — submitting shows a notice until a backend/CRM is connected.
  */
 export default function ContactSection({

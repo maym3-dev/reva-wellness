@@ -6,7 +6,7 @@ import { kpis as homeKpis } from "@/content/site";
 import { useInView } from "@/lib/useInView";
 import "./kpis.css";
 
-/** SHA "kpis-home": blush block with staggered count-ups (150ms apart) at 50% visibility. */
+/** Blush block with staggered count-ups (150ms apart) at 50% visibility. */
 export default function KpisHome({ data: kpis = homeKpis }: { data?: typeof homeKpis }) {
   const [gridRef, inView] = useInView<HTMLDivElement>(0.5);
 

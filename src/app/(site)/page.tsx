@@ -12,7 +12,7 @@ import KpisHome from "@/components/sections/KpisHome";
 import MarketProof from "@/components/sections/MarketProof";
 import TabLinks from "@/components/sections/TabLinks";
 
-/** Homepage — section order mirrors shawellness.com/en/ */
+/** Homepage sections, top to bottom. */
 export default function Home() {
   return (
     <>

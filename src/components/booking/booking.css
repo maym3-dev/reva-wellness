@@ -1,5 +1,5 @@
 /* ==================================================================
-   Booking engine — styled after shawellness.com/en/online-reservations
+   Booking engine
    ================================================================== */
 .bk,
 .bk-modal,
@@ -458,7 +458,7 @@
 .bk-dates.has-error .bk-dates__trigger {
   border-color: var(--bk-error);
 }
-/* In the page flow (like SHA): opening it pushes the content down, so the
+/* In the page flow: opening it pushes the content down, so the
    document height is always right and nothing hangs past the page end. */
 .bk-calendar {
   position: relative;
@@ -859,7 +859,7 @@
 .bk-col-6 {
   grid-column: span 6;
 }
-/* SHA-sized fields: 48px tall, label sits inside as a placeholder and
+/* Fields: 48px tall, label sits inside as a placeholder and
    shrinks to the top once the field has a value or focus. */
 .bk-field {
   position: relative;
@@ -988,7 +988,7 @@
   line-height: 1;
 }
 
-/* SHA custom select (tm-custom-select) */
+/* Custom select */
 .bk-select {
   position: relative;
 }
@@ -1139,7 +1139,7 @@
   font-size: 15px;
 }
 
-/* SHA centred dialog (Reset confirm, Access my booking) — shares the .bk-cc overlay */
+/* Centred dialog (Reset confirm, Access my booking) — shares the .bk-cc overlay */
 .bk-dialog {
   position: relative;
   width: min(600px, 100%);
@@ -1230,7 +1230,7 @@
   }
 }
 
-/* SHA country-code dialog */
+/* Country-code dialog */
 .bk-cc {
   position: fixed;
   inset: 0;

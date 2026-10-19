@@ -9,7 +9,7 @@ import "./tab-links.css";
 const AUTOPLAY_MS = 7000;
 
 /**
- * SHA "tab-links": big uppercase tab titles (active one shifts 20px right),
+ * Tab links: big uppercase tab titles (active one shifts 20px right),
  * stacked images that slide vertically to the active index, 7s autoplay that
  * pauses on hover and restarts after a click; arrow keys / Home / End navigate.
  */

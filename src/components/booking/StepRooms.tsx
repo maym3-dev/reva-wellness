@@ -152,7 +152,7 @@ export default function StepRooms({ onContinue }: { onContinue: () => void }) {
   );
 }
 
-/** Small image carousel with dots (SHA room cards). */
+/** Small image carousel with dots (room cards). */
 function Gallery({ images, name }: { images: string[]; name: string }) {
   const [i, setI] = useState(0);
   return (

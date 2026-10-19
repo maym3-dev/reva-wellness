@@ -159,7 +159,7 @@ export const COUNTRIES: Country[] = RAW.split("\n").map((line) => {
   return { iso, name, dial: `+${dial}`, flag: flagOf(iso) };
 });
 
-/** REVA's main source markets, shown first (SHA puts its key markets on top too). */
+/** REVA's main source markets, shown first. */
 const TOP = ["TH", "US", "GB", "AU", "DE", "FR", "SG", "CN", "JP", "KR", "IN", "RU", "AE"];
 
 export const COUNTRIES_FEATURED: Country[] = [

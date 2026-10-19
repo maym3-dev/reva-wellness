@@ -52,7 +52,7 @@
   gap: 20px;
 }
 
-/* Circular arrow button that rotates 45° on hover (SHA "boton-link") */
+/* Circular arrow button that rotates 45° on hover */
 .circle-link {
   display: inline-flex;
   align-items: center;

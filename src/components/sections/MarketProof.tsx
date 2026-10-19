@@ -7,7 +7,7 @@ import { marketProof } from "@/content/site";
 import "./market-proof.css";
 
 /**
- * SHA "market-proof": on desktop a continuous linear marquee (Swiper loop, autoplay
+ * Press quotes: on desktop a continuous linear marquee (Swiper loop, autoplay
  * delay 0, speed 7000); on mobile one quote at a time every 4s with dots.
  */
 export default function MarketProof() {

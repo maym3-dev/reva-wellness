@@ -21,14 +21,14 @@ type Props = {
   /** full = 100vh (destination pages), large = 80vh, short = 60vh (utility pages) */
   size?: "full" | "large" | "short";
   align?: "left" | "center";
-  /** Sibling-page strip pinned to the bottom of the hero (SHA program heroes). */
+  /** Sibling-page strip pinned to the bottom of the hero. */
   subnav?: SubnavItem[];
   /** Key facts shown in a row at the bottom of the hero (size, guests…). */
   facts?: Fact[];
 };
 
 /**
- * Inner-page hero in the SHA language: dark image/video with the same
+ * Inner-page hero: dark image/video with the same
  * overlay + bottom blend as the home hero, label/title static, sub-copy and
  * CTAs fading up 100px (0.4s / 0.8s), and a slow Ken Burns zoom on stills.
  */

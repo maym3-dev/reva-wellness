@@ -1,7 +1,7 @@
 import BookingHeader from "@/components/booking/BookingHeader";
 import "@/components/booking/booking.css";
 
-/** Booking engine pages: minimal SHA-style header, no marketing footer. */
+/** Booking engine pages: minimal header, no marketing footer. */
 export default function BookingLayout({ children }: LayoutProps<"/">) {
   return (
     <div className="bk">

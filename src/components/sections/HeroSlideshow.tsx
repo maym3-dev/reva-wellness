@@ -6,7 +6,7 @@ import SmartLink from "@/components/ui/SmartLink";
 import "./hero.css";
 
 /**
- * Full-viewport video hero (SHA "slideshow-sha", single-slide variant).
+ * Full-viewport video hero (single-slide variant).
  * Heading is static; sub-heading and CTA fade up 100px with 0.4s / 0.8s delays.
  * The bottom blends into the dark intro section below.
  */
@@ -18,7 +18,7 @@ export default function HeroSlideshow() {
     if (!v) return;
     v.muted = true;
     const p = v.play();
-    // Autoplay can be rejected on first paint; SHA retries once after 150ms.
+    // Autoplay can be rejected on first paint; retry once after 150ms.
     p?.catch(() => setTimeout(() => v.play().catch(() => {}), 150));
   }, []);
 

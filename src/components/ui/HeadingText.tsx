@@ -1,6 +1,6 @@
 import type { Heading } from "@/content/types";
 
-/** Renders SHA's mixed-weight headings: light text with a regular, italic emphasis. */
+/** Renders mixed-weight headings: light text with a regular, italic emphasis. */
 export default function HeadingText({ h, upper = true }: { h: Heading; upper?: boolean }) {
   const t = (s?: string) => (s && upper ? s.toUpperCase() : s);
   return (

@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { useLenis } from "@/components/providers/SmoothScroll";
 import { CloseIcon } from "@/components/ui/Icons";
 
-/** Side panel modal (SHA "modal-lateral"): slides in from the right over a blurred page. */
+/** Side panel modal: slides in from the right over a blurred page. */
 export default function Modal({
   open,
   onClose,

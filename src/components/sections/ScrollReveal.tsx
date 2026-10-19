@@ -28,7 +28,7 @@ function Headline({ lines, breakLines }: { lines: Lines; breakLines: boolean }) 
 /**
  * Two stacked copies of the headline: dark base layer, light reveal layer on top.
  * The light layer's clip-path is scrubbed from inset(100% 0 0 0) → inset(0) as the
- * section travels from "top bottom" to "bottom top" (SHA gsap-scroll-reveal).
+ * section travels from "top bottom" to "bottom top".
  */
 export default function ScrollReveal({ lines = homeReveal.lines }: { lines?: Lines }) {
   const sectionRef = useRef<HTMLElement>(null);

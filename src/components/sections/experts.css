@@ -117,7 +117,7 @@
   opacity: 0.9;
 }
 
-/* Desktop: SHA's 5×150px masonry map */
+/* Desktop: 5×150px masonry map */
 @media (min-width: 993px) {
   .experts__masonry {
     grid-template-columns: repeat(5, 1fr);

@@ -1,6 +1,6 @@
 /** Shared content shapes used by the reusable sections. */
 
-/** Heading with an emphasised (regular + italic) part, SHA style: "<em>HEALTH</em> PROGRAMS". */
+/** Heading with an emphasised (regular + italic) part, e.g. "<em>WELLNESS</em> PROGRAMMES". */
 export type Heading = { before?: string; emphasis?: string; after?: string };
 
 export type Cta = { label: string; href: string };

@@ -6,11 +6,11 @@ import { asset } from "@/lib/basePath";
 
 /**
  * Site-wide settings, navigation and homepage copy.
- * The layout/interactions are cloned from SHA; this content is REVA placeholder
- * copy taken from the current muangsamui.com site — replace freely.
+ * The content is REVA placeholder copy taken from the current muangsamui.com
+ * site — replace freely.
  */
 
-/** Our SHA-style booking flow (mock backend for now). */
+/** Our own booking flow (mock backend for now). */
 export const BOOKING_URL = "/online-reservations/";
 /** The live SmartBooking Pro engine, kept for reference until the new backend is connected. */
 export const LEGACY_BOOKING_URL =
@@ -161,7 +161,7 @@ export type GuestStory = {
 export const experts = {
   heading: ["Loved by guests", "Trusted by travellers"],
   text: "Families, couples and wellness seekers who return to REVA year after year.",
-  // Order matters: tiles 1–10 map to the SHA masonry layout (see experts.css).
+  // Order matters: tiles 1–10 map to the masonry layout (see experts.css).
   items: [
     { name: "The Andersons", role: "Family stay · Pool Villa", image: m("family-pool-villa-garden-view-img01.jpeg"), quote: "“The kids lived in the pool, we lived in the spa. A perfect family holiday.”" },
     { name: "Mika & Jun", role: "Honeymoon", image: m("muang-samui-honeymoon-img03.jpeg"), quote: "“Every sunset felt like it was arranged just for us.”" },

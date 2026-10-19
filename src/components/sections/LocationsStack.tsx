@@ -8,7 +8,7 @@ import SmartLink from "@/components/ui/SmartLink";
 import "./locations.css";
 
 /**
- * SHA "locations-module" curtain/stack effect: the wrapper pins for 300% of the
+ * Curtain/stack effect: the wrapper pins for 300% of the
  * viewport while panel 2, then panel 3, slide up (yPercent 100 → 0) over panel 1.
  */
 export default function LocationsStack({ data: locations = homeLocations }: { data?: typeof homeLocations }) {

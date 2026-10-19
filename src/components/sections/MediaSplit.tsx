@@ -25,7 +25,7 @@ type Props = {
   imageSide?: "right" | "left";
 };
 
-/** SHA "big-one": 50/50 block, text on one side, full-bleed image with optional video on the other. */
+/** 50/50 block, text on one side, full-bleed image with optional video on the other. */
 export default function MediaSplit({
   quote,
   title,

@@ -201,7 +201,7 @@ export default function StepStay({ onContinue }: { onContinue: () => void }) {
   );
 }
 
-/** SHA promotion banner: featured code with APPLY, plus a free-text code field. */
+/** Promotion banner: featured code with APPLY, plus a free-text code field. */
 function PromoBox({ applied }: { applied: boolean }) {
   const { draft, content, promo, setPromo } = useBooking();
   const featured = content!.featuredPromo!;

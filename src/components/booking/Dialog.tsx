@@ -7,7 +7,7 @@ import { CloseIcon } from "@/components/ui/Icons";
 const noop = () => () => {};
 
 /**
- * SHA centred dialog over a blurred page: close ✕, Esc and backdrop click
+ * Centred dialog over a blurred page: close ✕, Esc and backdrop click
  * close it; focus moves in on open and back to the opener on close.
  */
 export default function Dialog({

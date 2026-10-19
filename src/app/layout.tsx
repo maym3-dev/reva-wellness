@@ -3,7 +3,7 @@ import { Hanken_Grotesk } from "next/font/google";
 import RevealObserver from "@/components/providers/RevealObserver";
 import "./globals.css";
 
-// Free stand-in for SHA's licensed "Graphik" — swap for the brand font later.
+// Free web font — swap for the brand font later.
 const brandFont = Hanken_Grotesk({
   variable: "--font-brand",
   subsets: ["latin"],

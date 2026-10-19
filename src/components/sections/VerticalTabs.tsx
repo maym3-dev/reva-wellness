@@ -22,7 +22,7 @@ type Props = {
 };
 
 /**
- * SHA "experience-design" module: tab list on the left (active shifts right and
+ * Vertical tabs: tab list on the left (active shifts right and
  * darkens), content + image on the right cross-fading between panels.
  * Arrow keys / Home / End move between tabs.
  */

@@ -11,7 +11,7 @@ const DURATION = 500;
 const SWIPE_MIN = 50;
 
 /**
- * Port of SHA's advisors carousel.
+ * Advisors carousel.
  * Desktop/tablet: the active image is the LAST item in the track, pinned to the right edge
  * and enlarged; "next" grows the previous item while the track slides right, then the old
  * active item is recycled to the front of the DOM (infinite loop).

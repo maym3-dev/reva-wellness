@@ -9,7 +9,7 @@ import AccessDialog from "./AccessDialog";
 import BookingDetails from "./BookingDetails";
 
 /**
- * Where the e-mailed access link lands (SHA self-service): ?token=… shows the
+ * Where the e-mailed access link lands (self-service): ?token=… shows the
  * booking. Without a valid token it offers the "Access my booking" dialog.
  */
 export default function MyBooking() {

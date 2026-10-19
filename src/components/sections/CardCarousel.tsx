@@ -9,7 +9,7 @@ import SmartLink from "@/components/ui/SmartLink";
 import { useHoverVideo } from "@/lib/useHoverVideo";
 import "./programs.css";
 
-// Same bleed SHA uses: first card aligns with the container, cards overflow to the viewport edge.
+// Bleed: first card aligns with the container, cards overflow to the viewport edge.
 const SIDE_OFFSET = "max(var(--contenedor-padding), calc((100vw - var(--contenedor-width)) / 2))";
 
 /** Splide with autoWidth + padding lets go(N) run past the real end; find the true last index. */
@@ -35,7 +35,7 @@ type Props = {
   tone?: "white" | "light";
 };
 
-/** SHA "carrusel-programas": optional filter tabs + Splide carousel + hover video preview. */
+/** Optional filter tabs + Splide carousel + hover video preview. */
 export default function CardCarousel({ id, heading, text, allLink, filters, items, previewVideo, tone = "white" }: Props) {
   const [filter, setFilter] = useState("all");
   const [index, setIndex] = useState(0);

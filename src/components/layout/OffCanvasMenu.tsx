@@ -9,7 +9,7 @@ import SmartLink from "@/components/ui/SmartLink";
 const DESKTOP_QUERY = "(min-width: 1024px)";
 
 /**
- * SHA-style off-canvas: a 30% panel slides in from the left under the header,
+ * Off-canvas menu: a 30% panel slides in from the left under the header,
  * the rest of the page is blurred. On desktop, hovering a parent opens its
  * submenu as a second column; on mobile, tapping drills in with a Back button.
  */

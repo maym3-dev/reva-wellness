@@ -8,7 +8,7 @@ import SmartLink from "@/components/ui/SmartLink";
 import "./team.css";
 
 /**
- * SHA "clinical-team" carousel: Swiper (slidesPerView auto, speed 600), 5 visible on
+ * Team carousel: Swiper (slidesPerView auto, speed 600), 5 visible on
  * desktop, greyscale cards with bottom gradient, arrows disabled at the ends,
  * one dot per slide (last dot active once the track reaches its end).
  */

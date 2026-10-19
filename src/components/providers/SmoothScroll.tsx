@@ -8,11 +8,11 @@ const LenisContext = createContext<Lenis | null>(null);
 
 export const useLenis = () => useContext(LenisContext);
 
-/** Exponential ease-out used by SHA for both Lenis and programmatic scrolls. */
+/** Exponential ease-out used for both Lenis and programmatic scrolls. */
 export const shaEase = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
 
 /**
- * Lenis smooth scrolling on desktop only (SHA disables it <= 991px and on iOS),
+ * Lenis smooth scrolling on desktop only (disabled <= 991px and on iOS),
  * driven by GSAP's ticker so ScrollTrigger stays perfectly in sync.
  */
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {

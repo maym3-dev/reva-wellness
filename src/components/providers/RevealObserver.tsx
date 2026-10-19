@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /**
- * Site-wide replacement for SHA's AOS + `.line-title` observers.
+ * Site-wide scroll-in observer for reveals and `.line-title`.
  * - `[data-reveal]` gets `.is-revealed` (honours `data-reveal-delay` in ms)
  * - `.line-title` gets `.line-title--in-view`
  */

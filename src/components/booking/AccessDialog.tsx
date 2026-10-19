@@ -6,7 +6,7 @@ import { bookingApi } from "@/lib/booking/client";
 import Dialog from "./Dialog";
 
 /**
- * SHA "Access my booking": reference + main guest's passport/ID, then an
+ * "Access my booking": reference + main guest's passport/ID, then an
  * access link is e-mailed. The mock has no mailer, so it offers the link directly.
  */
 export default function AccessDialog({ open, onClose, initialLocator = "" }: { open: boolean; onClose: () => void; initialLocator?: string }) {

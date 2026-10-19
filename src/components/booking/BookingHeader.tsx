@@ -10,7 +10,7 @@ import { PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import AccessDialog from "./AccessDialog";
 import ConfirmDialog from "./ConfirmDialog";
 
-/** SHA booking header: language left, logo centre, Reset / My booking / contact right. */
+/** Booking header: language left, logo centre, Reset / My booking / contact right. */
 export default function BookingHeader() {
   const reset = useBooking((s) => s.reset);
   const clearErrors = useBookingErrors((s) => s.clear);

@@ -2,7 +2,7 @@
 
 import Dialog from "./Dialog";
 
-/** SHA confirm dialog, e.g. "Start your booking over?". */
+/** Confirm dialog, e.g. "Start your booking over?". */
 export default function ConfirmDialog({
   open,
   title,

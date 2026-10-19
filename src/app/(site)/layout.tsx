@@ -4,7 +4,7 @@ import SmoothScroll from "@/components/providers/SmoothScroll";
 
 /**
  * Marketing pages: full header with off-canvas menu, pre-footer and footer, and
- * Lenis smooth scrolling. The booking engine uses native scroll, like SHA's.
+ * Lenis smooth scrolling. The booking engine uses native scroll.
  */
 export default function SiteLayout({ children }: LayoutProps<"/">) {
   return (

@@ -7,7 +7,7 @@ const canHover = () =>
   window.matchMedia("(min-width: 769px)").matches;
 
 /**
- * SHA's hover-preview pattern (programs cards, big-one): on mouseenter (desktop,
+ * Hover-preview pattern (carousel cards, media split): on mouseenter (desktop,
  * non-touch) mount a muted looping <video>, fade it in once it plays; on mouseleave
  * or when scrolled out of view, fade it out and unmount after the transition.
  */

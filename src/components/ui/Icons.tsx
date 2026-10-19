@@ -101,7 +101,7 @@ export const ArrowLeft = (p: P) => (
   </svg>
 );
 
-/** Thin-line KPI icons (stand-ins for SHA's custom SVGs). */
+/** Thin-line KPI icons. */
 export const KpiIcon = ({ name, ...p }: P & { name: string }) => {
   const paths: Record<string, React.ReactNode> = {
     villa: (

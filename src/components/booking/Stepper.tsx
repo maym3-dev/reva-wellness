@@ -4,7 +4,7 @@ import { CheckIcon } from "@/components/ui/Icons";
 
 type Step = 1 | 2 | 3 | 4 | 5;
 
-/** SHA progress line: labels above, circles below; done = filled tick, current = ring. */
+/** Progress line: labels above, circles below; done = filled tick, current = ring. */
 export default function Stepper({
   steps,
   current,

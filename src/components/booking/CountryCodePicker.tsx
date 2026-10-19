@@ -6,7 +6,7 @@ import { COUNTRIES_FEATURED, type Country } from "@/lib/booking/countries";
 import { ChevronDown, CloseIcon } from "@/components/ui/Icons";
 
 /**
- * SHA phone prefix: the field shows the dial code; clicking it opens a
+ * Phone prefix: the field shows the dial code; clicking it opens a
  * centred "Select country code" dialog with a search by code or country.
  */
 export default function CountryCodePicker({

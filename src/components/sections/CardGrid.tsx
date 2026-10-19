@@ -23,7 +23,7 @@ type Props = {
 };
 
 /**
- * Listing grid in the SHA card language: image zooms on hover, circular arrow
+ * Listing grid: image zooms on hover, circular arrow
  * rotates 45°, cards rise in with a stagger; optional filter pills and
  * collapsible detail blocks (offer terms).
  */

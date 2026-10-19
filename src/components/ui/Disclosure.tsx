@@ -3,10 +3,10 @@
 import { useId, useLayoutEffect, useRef, useState } from "react";
 import "./disclosure.css";
 
-const DURATION = 300; // SHA faq-accordion: height 0.3s ease-out
+const DURATION = 300; // height 0.3s ease-out
 
 /**
- * Accordion row ported from SHA's faq-accordion: the panel animates its real
+ * Accordion row: the panel animates its real
  * measured height (0 → scrollHeight → auto, and back), the plus turns into a
  * minus, and the answer fades in. Padding lives inside the content so nothing
  * snaps. Works uncontrolled (`defaultOpen`) or controlled (`open` + `onToggle`)

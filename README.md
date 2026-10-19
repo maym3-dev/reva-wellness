@@ -1,7 +1,8 @@
-# REVA web — SHA-style homepage clone
+# REVA Wellness
+
+Website and online booking engine for REVA by Royal Muang Samui Villas, a wellness resort on Koh Samui.
 
 Next.js 16 (App Router) + Tailwind 4, with GSAP/ScrollTrigger, Lenis, Swiper, Splide and CountUp.js.
-Layout and interactions are cloned from shawellness.com; the copy and media are REVA placeholders.
 
 ```bash
 npm install
@@ -15,29 +16,29 @@ npm run build
 | --- | --- |
 | `src/content/site.ts` | **All homepage copy, menu, images and links.** Edit here first. |
 | `src/app/globals.css` | Design tokens (`:root`), type scale, buttons, line-title and reveal animations |
-| `src/app/layout.tsx` | Font (Hanken Grotesk stands in for SHA's licensed Graphik), header/footer shell |
+| `src/app/layout.tsx` | Font (Hanken Grotesk) and root shell |
 | `src/components/providers/SmoothScroll.tsx` | Lenis (desktop only, > 991px) driven by GSAP's ticker |
 | `src/components/providers/RevealObserver.tsx` | `data-reveal="fade-up|fade-in"` and `.line-title` scroll-in animations |
 | `src/components/layout/` | Header (transparent → white at 50px, hides on scroll-down < 1024px), off-canvas menu, footer |
-| `src/components/sections/` | One component + CSS file per homepage section (order in `src/app/page.tsx`) |
+| `src/components/sections/` | One component + CSS file per homepage section (order in `src/app/(site)/page.tsx`) |
 | `public/media/` | Placeholder images and hero video taken from the current REVA site |
 
-## Homepage sections → SHA modules
+## Homepage sections
 
-| Component | SHA module | Interaction |
-| --- | --- | --- |
-| `HeroSlideshow` | slideshow-sha | Full-screen video, sub/CTA fade up (0.4s/0.8s), blend into next section |
-| `Intro` | home-hero-2026 | Line-title grow, KPI count-up at 20% visibility |
-| `ProgramsCarousel` | carrusel-programas | Splide with filter tabs, end-aware arrows, mobile dots, hover video preview |
-| `AdvisorsCarousel` | advisors | Custom looping track, active item grows on the right; drag/swipe |
-| `BigOne` | big-one | Hover video preview, click → video lightbox |
-| `ScrollReveal` | gsap-scroll-reveal | Scrubbed clip-path reveal of a light layer over a dark one |
-| `TeamCarousel` | clinical-team | Swiper, 5 visible, greyscale cards, end-aware arrows + dots |
-| `LocationsStack` | locations-module | Pinned for 300vh; panels 2 and 3 slide up over panel 1 |
-| `ExpertsGrid` | experts | 5-col masonry, staggered rise-in, hover zoom, video/story modals |
-| `KpisHome` | kpis-home | Staggered count-ups at 50% visibility |
-| `MarketProof` | market-proof | Continuous linear marquee (desktop), 4s autoplay + dots (mobile) |
-| `TabLinks` | tab-links | Vertical image slider, 7s autoplay, pause on hover, keyboard nav |
+| Component | Interaction |
+| --- | --- |
+| `HeroSlideshow` | Full-screen video, sub/CTA fade up (0.4s/0.8s), blend into next section |
+| `Intro` | Line-title grow, KPI count-up at 20% visibility |
+| `CardCarousel` | Splide with filter tabs, end-aware arrows, mobile dots, hover video preview |
+| `AdvisorsCarousel` | Custom looping track, active item grows on the right; drag/swipe |
+| `MediaSplit` | Hover video preview, click → video lightbox |
+| `ScrollReveal` | Scrubbed clip-path reveal of a light layer over a dark one |
+| `TeamCarousel` | Swiper, 5 visible, greyscale cards, end-aware arrows + dots |
+| `LocationsStack` | Pinned for 300vh; panels 2 and 3 slide up over panel 1 |
+| `ExpertsGrid` | 5-col masonry, staggered rise-in, hover zoom, video/story modals |
+| `KpisHome` | Staggered count-ups at 50% visibility |
+| `MarketProof` | Continuous linear marquee (desktop), 4s autoplay + dots (mobile) |
+| `TabLinks` | Vertical image slider, 7s autoplay, pause on hover, keyboard nav |
 
 ## Pages
 
@@ -72,7 +73,7 @@ Photos in `public/media/reva/` were downloaded from the current REVA site and ar
 
 ## Not wired up yet (UI only)
 
-- Booking: buttons link out to SmartBooking Pro (`BOOKING_URL` in `site.ts`).
+- Booking: the engine at `/online-reservations/` runs on mock data (`src/lib/booking/mock/`). Real availability, payments and e-mail are still to connect.
 - Newsletter / contact forms: no submission backend.
 - Language switcher, cookie consent and analytics.
 - `public/media/hero.mp4` is ~24 MB — re-encode or move to a CDN before launch.

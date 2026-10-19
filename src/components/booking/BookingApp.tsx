@@ -16,7 +16,7 @@ import StepCheckout from "./StepCheckout";
 export const STEPS = ["Stay and programmes", "Accommodation", "Add-ons", "Personal details", "Checkout"] as const;
 
 /**
- * SHA "online-reservations" flow: 5 steps on the left, sticky booking summary on
+ * Online reservations flow: 5 steps on the left, sticky booking summary on
  * the right (bottom sheet on mobile). The draft persists in localStorage and is
  * mirrored to the server, so a refresh or a later visit resumes where you left.
  */

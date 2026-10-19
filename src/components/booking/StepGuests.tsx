@@ -11,7 +11,7 @@ import CountryCodePicker from "./CountryCodePicker";
 const TITLE_OPTIONS = TITLES.map((t) => ({ value: t, label: t }));
 const NATIONALITY_OPTIONS = COUNTRIES.map((c) => ({ value: c.name, label: c.name }));
 
-/** Step 4 — main guest details (SHA layout), names for other guests, assignments and consents. */
+/** Step 4 — main guest details, names for other guests, assignments and consents. */
 export default function StepGuests({ onContinue }: { onContinue: () => void }) {
   const { draft, content, setGuestInfo, setProgramme, assignAddOn, setDetails, setConsent } = useBooking();
   const errors = useBookingErrors((s) => s.fields);

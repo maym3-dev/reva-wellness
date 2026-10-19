@@ -8,7 +8,7 @@ export type SelectOption = { value: string; label: string };
 type Common = {
   label: string;
   options: SelectOption[];
-  /** SHA "sercheable": typing in the box filters the list. */
+  /** Typing in the box filters the list. */
   searchable?: boolean;
   error?: string;
   className?: string;
@@ -19,7 +19,7 @@ type Single = Common & {
   multiple?: false;
   value: string;
   onChange: (v: string) => void;
-  /** SHA toggleValue: picking the current option again clears it. */
+  /** Picking the current option again clears it. */
   toggleValue?: boolean;
 };
 
@@ -31,7 +31,7 @@ type Multi = Common & {
 };
 
 /**
- * SHA custom select (tm-custom-select): a 48px box with a floating label,
+ * Custom select: a 48px box with a floating label,
  * the value and a chevron; opens a list below it. Keyboard: Enter/Space/↓
  * opens, ↑↓ move, Enter picks, Esc/Tab close.
  */
@@ -91,7 +91,7 @@ export default function Select(props: Single | Multi) {
     return () => document.removeEventListener("pointerdown", onDown);
   }, [open]);
 
-  // on open: focus search, bring the list into view (SHA does this on mobile), keep active option visible
+  // on open: focus search, bring the list into view (mainly for mobile), keep active option visible
   useEffect(() => {
     if (!open) return;
     if (searchable) search.current?.focus();

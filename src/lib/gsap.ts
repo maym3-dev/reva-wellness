@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
-  // Same global config SHA uses: don't recalc on mobile address-bar resize.
+  // Global config: don't recalc on mobile address-bar resize.
   ScrollTrigger.normalizeScroll(false);
   ScrollTrigger.config({
     ignoreMobileResize: true,
@@ -13,7 +13,7 @@ if (typeof window !== "undefined") {
   });
 }
 
-/** SHA treats <= 991px as "mobile": native scroll, no Lenis. */
+/** <= 991px counts as "mobile": native scroll, no Lenis. */
 export const MOBILE_QUERY = "(max-width: 991px)";
 
 export const isMobileViewport = () =>

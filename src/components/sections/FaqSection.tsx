@@ -2,7 +2,7 @@ import type { FaqItem } from "@/content/types";
 import FaqList from "./FaqList";
 import "./faq.css";
 
-/** SHA "faqs-section": title + intro on the left, accordion on the right. */
+/** FAQ section: title + intro on the left, accordion on the right. */
 export default function FaqSection({
   title = "Frequently asked questions",
   text,

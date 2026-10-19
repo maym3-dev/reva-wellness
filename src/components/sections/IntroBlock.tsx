@@ -23,7 +23,7 @@ type Props = {
 };
 
 /**
- * SHA "intro-programa": line-title, big uppercase heading, centred copy that
+ * Intro block: line-title, big uppercase heading, centred copy that
  * fades up, an optional facts row and a full-width media frame below.
  */
 export default function IntroBlock({

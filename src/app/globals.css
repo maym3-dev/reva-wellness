@@ -5,7 +5,7 @@
 @import "@splidejs/splide/css/core";
 
 /* ------------------------------------------------------------------
-   Design tokens (mirrors the SHA design system; rename / recolor later)
+   Design tokens (rename / recolor freely)
    ------------------------------------------------------------------ */
 :root {
   --contenedor-width: clamp(1168px, calc(100vw - 140px), 1500px);
@@ -105,7 +105,7 @@ video {
 }
 
 /* ------------------------------------------------------------------
-   Layout + typography helpers (SHA naming kept for parity)
+   Layout + typography helpers
    ------------------------------------------------------------------ */
 .contenedor {
   width: var(--contenedor-width);
@@ -237,7 +237,7 @@ video {
 }
 
 /* ------------------------------------------------------------------
-   Buttons ("boton" in SHA)
+   Buttons
    ------------------------------------------------------------------ */
 .boton {
   display: inline-block;

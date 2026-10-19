@@ -11,8 +11,8 @@ import BookingDetails from "./BookingDetails";
 import { CheckIcon, CloseIcon } from "@/components/ui/Icons";
 
 /**
- * Return page after the gateway. Polls the payment status (SHA polls
- * `sha_polling_redsys` the same way) and clears the draft once confirmed.
+ * Return page after the gateway. Polls the payment status and clears the
+ * draft once confirmed.
  */
 export default function Confirmation() {
   const ref = useSearchParams().get("ref") ?? "";

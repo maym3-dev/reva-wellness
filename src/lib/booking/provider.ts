@@ -8,7 +8,7 @@ import type { Booking, BookingContent, BookingDraft, MonthAvailability, Promo } 
 export interface BookingProvider {
   getContent(): Promise<BookingContent>;
   getAvailability(destination: string, month: string): Promise<MonthAvailability>;
-  /** Persist the in-progress draft (abandoned-booking recovery, like SHA's sha_sync_booking). */
+  /** Persist the in-progress draft (abandoned-booking recovery). */
   saveDraft(draft: BookingDraft): Promise<void>;
   checkCoupon(code: string, draft: BookingDraft): Promise<{ valid: true; promo: Promo } | { valid: false; reason: string }>;
   /** Re-price on the server, hold inventory and open a payment session. */
@@ -16,11 +16,11 @@ export interface BookingProvider {
   /** Called by the payment gateway (mock: by the mock payment page). */
   completePayment(paymentRef: string, outcome: "success" | "failure"): Promise<Booking>;
   /**
-   * SHA "Access my booking": verify reference + main guest's passport/ID (or e-mail)
+   * "Access my booking": verify reference + main guest's passport/ID (or e-mail)
    * and issue a short-lived access token that is e-mailed as a link.
    */
   requestAccess(locator: string, identifier: string): Promise<{ email: string; token: string } | null>;
-  /** Resolve an access-link token (SHA sha_selfservice_verify). */
+  /** Resolve an access-link token. */
   getBookingByToken(token: string): Promise<Booking | null>;
   getBookingByPaymentRef(paymentRef: string): Promise<Booking | null>;
 }

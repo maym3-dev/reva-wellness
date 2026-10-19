@@ -9,7 +9,7 @@ import { CloseIcon, PlayIcon } from "@/components/ui/Icons";
 import "./experts.css";
 
 /**
- * SHA "experts" masonry: 5-column grid of people cards that rise in with a
+ * Experts masonry: 5-column grid of people cards that rise in with a
  * staggered delay; image zooms on hover; video tiles open a lightbox, the rest
  * open a full-bleed story card.
  */

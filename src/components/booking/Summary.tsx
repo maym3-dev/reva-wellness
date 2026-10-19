@@ -8,7 +8,7 @@ import { useBookingErrors } from "@/lib/booking/validate";
 import Disclosure from "@/components/ui/Disclosure";
 import { CalendarIcon, CheckIcon, ChevronDown, KpiIcon, PlusIcon } from "@/components/ui/Icons";
 
-/** Right-hand booking summary (SHA). Becomes a bottom bar + sheet on mobile. */
+/** Right-hand booking summary. Becomes a bottom bar + sheet on mobile. */
 export default function Summary({ onContinue }: { onContinue?: () => void }) {
   const { draft, content, promo } = useBooking();
   const price = usePrice();
