@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# REVA web — SHA-style homepage clone
 
-## Getting Started
-
-First, run the development server:
+Next.js 16 (App Router) + Tailwind 4, with GSAP/ScrollTrigger, Lenis, Swiper, Splide and CountUp.js.
+Layout and interactions are cloned from shawellness.com; the copy and media are REVA placeholders.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000/royalmuangsamuivillas/
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What |
+| --- | --- |
+| `src/content/site.ts` | **All homepage copy, menu, images and links.** Edit here first. |
+| `src/app/globals.css` | Design tokens (`:root`), type scale, buttons, line-title and reveal animations |
+| `src/app/layout.tsx` | Font (Hanken Grotesk stands in for SHA's licensed Graphik), header/footer shell |
+| `src/components/providers/SmoothScroll.tsx` | Lenis (desktop only, > 991px) driven by GSAP's ticker |
+| `src/components/providers/RevealObserver.tsx` | `data-reveal="fade-up|fade-in"` and `.line-title` scroll-in animations |
+| `src/components/layout/` | Header (transparent → white at 50px, hides on scroll-down < 1024px), off-canvas menu, footer |
+| `src/components/sections/` | One component + CSS file per homepage section (order in `src/app/page.tsx`) |
+| `public/media/` | Placeholder images and hero video taken from the current REVA site |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Homepage sections → SHA modules
 
-## Learn More
+| Component | SHA module | Interaction |
+| --- | --- | --- |
+| `HeroSlideshow` | slideshow-sha | Full-screen video, sub/CTA fade up (0.4s/0.8s), blend into next section |
+| `Intro` | home-hero-2026 | Line-title grow, KPI count-up at 20% visibility |
+| `ProgramsCarousel` | carrusel-programas | Splide with filter tabs, end-aware arrows, mobile dots, hover video preview |
+| `AdvisorsCarousel` | advisors | Custom looping track, active item grows on the right; drag/swipe |
+| `BigOne` | big-one | Hover video preview, click → video lightbox |
+| `ScrollReveal` | gsap-scroll-reveal | Scrubbed clip-path reveal of a light layer over a dark one |
+| `TeamCarousel` | clinical-team | Swiper, 5 visible, greyscale cards, end-aware arrows + dots |
+| `LocationsStack` | locations-module | Pinned for 300vh; panels 2 and 3 slide up over panel 1 |
+| `ExpertsGrid` | experts | 5-col masonry, staggered rise-in, hover zoom, video/story modals |
+| `KpisHome` | kpis-home | Staggered count-ups at 50% visibility |
+| `MarketProof` | market-proof | Continuous linear marquee (desktop), 4s autoplay + dots (mobile) |
+| `TabLinks` | tab-links | Vertical image slider, 7s autoplay, pause on hover, keyboard nav |
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+URLs mirror the current REVA site exactly: everything is served under `/royalmuangsamuivillas/` (`basePath`) with a trailing slash (`trailingSlash`). The prefix is defined once in `src/lib/basePath.ts`; set it to `""` to serve from a domain root.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `next/link` (and `SmartLink`) add the prefix automatically — write links as `/wedding`.
+- Files in `public/` do **not** get it automatically: reference them through `asset("/media/…")` or the `media` map, which already applies it.
 
-## Deploy on Vercel
+| Route | Template / sections | Content file |
+| --- | --- | --- |
+| `/suites/`, `/suites/[slug]/` (6) | Hero with facts + sub-nav, intro, equipped/amenities grids, gallery strip + lightbox, book-direct split, more rooms | `content/suites.ts` |
+| `/wellness/`, `/dining/`, `/experiences/` | Hub: hero, intro with facts, pinned stack / grids / carousels, scroll reveal | `content/venues.ts` |
+| `/wellness/[slug]/` (4, incl. `cave-rai-ra`), `/dining/[slug]/` (3), `/experiences/[slug]/` (6) | `templates/VenuePage.tsx`: hero, intro, offerings tabs, gallery, CTA, more | `content/venues.ts` |
+| `/experiences/meeting-events/`, `/wedding/`, `/special-offers/`, `/become-a-member/`, `/gallery/`, `/press/` (+ articles), `/contact/` | Composed from the shared sections | `content/pages.ts` |
+| `/privacy-policy/`, `/cookies-policy/`, `/booking-policy/`, `/terms-and-conditions/` | `templates/LegalView.tsx` | `content/legal.ts` |
+| `/about/` | New page (no equivalent on the old site) | `content/pages.ts` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`/news-events/` (empty on the old site) permanently redirects to `/press/`. The old `/blog/` has not been rebuilt.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Photos in `public/media/reva/` were downloaded from the current REVA site and are mapped per page in `content/media.ts`.
+
+### Inner-page sections (`src/components/sections/`)
+
+`PageHero`, `IntroBlock`, `FeatureGrid` (cards / checklist), `VerticalTabs`, `CardGrid` (filters + collapsible terms), `CardCarousel`, `MediaSplit`, `ImageStrip`, `GalleryGrid`, `FaqSection`, `DataTable`, `ContactSection`, `Prose` — plus the home sections, which all accept a `data` prop.
+
+## To confirm with the REVA team
+
+- Spa/clinic/restaurant "offerings" lists, the wedding package bullets and the FAQ answers are suggested copy.
+- The booking policy page is assembled from the terms on the current offers page.
+- The Data Protection Officer email in the privacy policy is marked "to be confirmed".
+- Instagram / YouTube / TikTok links are placeholders (`#`).
+
+## Not wired up yet (UI only)
+
+- Booking: buttons link out to SmartBooking Pro (`BOOKING_URL` in `site.ts`).
+- Newsletter / contact forms: no submission backend.
+- Language switcher, cookie consent and analytics.
+- `public/media/hero.mp4` is ~24 MB — re-encode or move to a CDN before launch.

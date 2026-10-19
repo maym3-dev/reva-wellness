@@ -1,0 +1,221 @@
+.page-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--hero-bg);
+  color: var(--brand-text-dark);
+}
+.page-hero--full {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 620px;
+}
+.page-hero--large {
+  height: 80vh;
+  height: 80dvh;
+  min-height: 560px;
+}
+.page-hero--short {
+  height: 60vh;
+  min-height: 440px;
+}
+
+.page-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.page-hero__media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.page-hero__image,
+.page-hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+/* Slow Ken Burns on stills so inner heroes feel as alive as the home video. */
+.page-hero__image {
+  animation: page-hero-zoom 14s ease-out both;
+}
+@keyframes page-hero-zoom {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.page-hero__blend {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  height: clamp(140px, 36vh, 360px);
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(9, 10, 17, 0.85) 0%, rgba(9, 10, 17, 0.4) 45%, transparent 100%);
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 3;
+  padding-bottom: clamp(56px, 10vh, 112px);
+}
+.page-hero--center .page-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: auto;
+  padding-top: var(--header-height);
+  text-align: center;
+}
+.page-hero__label {
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+.page-hero__title {
+  max-width: 1100px;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.15;
+  font-weight: 300;
+  text-wrap: balance;
+}
+.page-hero__text {
+  max-width: 720px;
+  margin-top: 20px;
+  font-size: clamp(1.0625rem, 1.6vw, 1.375rem);
+  line-height: 1.45;
+}
+.page-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.page-hero__facts {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: -40px;
+  padding-bottom: 48px;
+}
+.page-hero__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 32px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+.page-hero__fact:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.page-hero__fact-label {
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.page-hero__fact-value {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.page-hero__subnav {
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(9, 10, 17, 0.35);
+  backdrop-filter: blur(6px);
+}
+.page-hero__subnav-inner {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.page-hero__subnav-inner::-webkit-scrollbar {
+  display: none;
+}
+.page-hero__subnav-link {
+  flex-shrink: 0;
+  padding: 18px 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+.page-hero__subnav-link:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.page-hero__subnav-link:hover,
+.page-hero__subnav-link.is-active {
+  color: #fff;
+}
+.page-hero__subnav-link.is-active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.page-hero__motion--label {
+  animation: hero-fade-up 0.8s ease-out 0.1s both;
+}
+.page-hero__motion--sub {
+  animation: hero-fade-up 0.8s ease-out 0.4s both;
+}
+.page-hero__motion--cta {
+  animation: hero-fade-up 0.8s ease-out 0.8s both;
+}
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__motion,
+  .page-hero__image {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero__facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    margin-top: -24px;
+  }
+  .page-hero__fact,
+  .page-hero__fact:first-child {
+    padding: 0 0 0 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .page-hero__fact-value {
+    font-size: 16px;
+  }
+  .page-hero__ctas .boton {
+    flex: 1;
+  }
+}

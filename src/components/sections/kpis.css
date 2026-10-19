@@ -1,0 +1,51 @@
+.kpis {
+  padding-block: 144px;
+  background: var(--kpis-bg);
+  color: #333;
+}
+.kpis__intro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+.kpis__intro-text {
+  grid-column: 2 / 4;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.kpis__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.kpi-item__number {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  margin-bottom: 8px;
+}
+.kpi-item__description {
+  color: #555;
+  text-wrap: balance;
+}
+
+@media (max-width: 992px) {
+  .kpis {
+    padding-block: 104px;
+  }
+  .kpis__intro,
+  .kpis__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .kpis__intro-text {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 768px) {
+  .kpis {
+    padding-block: 72px 80px;
+  }
+}

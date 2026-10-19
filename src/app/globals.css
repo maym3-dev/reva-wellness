@@ -1,26 +1,367 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "@splidejs/splide/css/core";
 
+/* ------------------------------------------------------------------
+   Design tokens (mirrors the SHA design system; rename / recolor later)
+   ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --contenedor-width: clamp(1168px, calc(100vw - 140px), 1500px);
+  --contenedor-padding: 24px;
+
+  --brand-bg-dark: #24282b;
+  --brand-text-dark: #ffffff;
+  --brand-text-dark-secondary: #8e8e8e;
+  --brand-bg-light: #f5f6f9;
+  --brand-text-light: #333333;
+
+  --body-background: #ffffff;
+  --body-background-light: #f5f6f9;
+  --body-text: #2c2c2c;
+  --body-text-secondary: #8e8e8e;
+  --dark-black: #2c2c2c;
+  --clickable-color: #2c2c2c;
+  --button-dark: var(--clickable-color);
+  --button-light: #ffffff;
+  --hero-bg: #090a11;
+  --hero-overlay-rgb: 9, 10, 17;
+  --kpis-bg: #e2d4d3;
+
+  --section-gap: 96px;
+
+  --header-padding-y: 8px;
+  --header-height: calc(var(--header-padding-y) * 2 + 54px);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-brand);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-brand), "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  background: var(--body-background);
+  color: var(--body-text);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  font-weight: 300;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ------------------------------------------------------------------
+   Layout + typography helpers (SHA naming kept for parity)
+   ------------------------------------------------------------------ */
+.contenedor {
+  width: var(--contenedor-width);
+  max-width: calc(100% - var(--contenedor-padding) * 2);
+  margin-inline: auto;
+}
+
+.headline-L {
+  font-size: 72px;
+  line-height: 80px;
+}
+.headline-M {
+  font-size: 56px;
+  line-height: 64px;
+}
+.headline-S {
+  font-size: 48px;
+  line-height: 56px;
+}
+.headline-L,
+.headline-M,
+.headline-S {
+  font-weight: 300;
+  text-wrap: balance;
+}
+
+.title-XL {
+  font-size: 40px;
+  line-height: 48px;
+}
+.title-L {
+  font-size: 32px;
+  line-height: 40px;
+}
+.title-M {
+  font-size: 24px;
+  line-height: 32px;
+}
+.title-S {
+  font-size: 20px;
+  line-height: 24px;
+}
+.subtitle-M {
+  font-size: 20px;
+  line-height: 24px;
+}
+.subtitle-S {
+  font-size: 16px;
+  line-height: 20px;
+}
+.disclaimer-L {
+  font-size: 16px;
+  line-height: 22px;
+}
+.disclaimer-M {
+  font-size: 14px;
+  line-height: 22px;
+}
+.label-M,
+.label-S {
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.label-M {
+  font-size: 14px;
+}
+.label-S {
+  font-size: 12px;
+}
+.light {
+  font-weight: 300 !important;
+}
+.regular {
+  font-weight: 400 !important;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .headline-L {
+    font-size: 56px;
+    line-height: 74px;
+  }
+  .headline-M {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  .headline-S {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 991px) {
+  :root {
+    --section-gap: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline-L {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .headline-M,
+  .headline-S {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .title-XL {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .title-L {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .title-M {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .subtitle-M {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Buttons ("boton" in SHA)
+   ------------------------------------------------------------------ */
+.boton {
+  display: inline-block;
+  min-width: 80px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: 1px solid var(--button-light);
+  background: none;
+  color: var(--button-light);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.boton--primary {
+  background: var(--button-dark);
+  border-color: var(--button-dark);
+  color: var(--button-light);
+}
+.boton--primary:hover {
+  background: #555;
+  border-color: #555;
+}
+.boton--ghost:hover,
+.boton--ghost:focus-visible {
+  background-color: color-mix(in srgb, var(--button-light) 25%, transparent);
+}
+.boton--ghost-dark {
+  border-color: var(--button-dark);
+  color: var(--button-dark);
+}
+.boton--ghost-dark:hover,
+.boton--ghost-dark:focus-visible {
+  background-color: color-mix(in srgb, var(--button-dark) 5%, transparent);
+}
+
+/* ------------------------------------------------------------------
+   Line title (grows a rule, then fades the text in)
+   ------------------------------------------------------------------ */
+.line-title {
+  display: inline-block;
+  color: inherit;
+}
+.line-title__line {
+  display: inline-block;
+  width: 70px;
+  height: 2px;
+  margin-right: 20px;
+  background-color: currentColor;
+  opacity: 0.4;
+  vertical-align: baseline;
+  position: relative;
+  bottom: 0.5em;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.line-title__text {
+  display: inline;
+  opacity: 0;
+}
+.line-title--in-view .line-title__line {
+  animation: line-title-grow 0.6s ease-out forwards;
+}
+.line-title--in-view .line-title__text {
+  animation: line-title-text-fade 0.3s ease-out 0.6s forwards;
+}
+@keyframes line-title-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes line-title-text-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Reveal-on-scroll (AOS replacement: data-reveal="fade-up" etc.)
+   ------------------------------------------------------------------ */
+[data-reveal] {
+  transition-property: opacity, transform;
+  transition-duration: 0.8s;
+  transition-timing-function: ease;
+}
+[data-reveal="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+}
+[data-reveal="fade-in"] {
+  opacity: 0;
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .line-title__line {
+    transform: none;
+  }
+  .line-title__text {
+    opacity: 1;
+  }
+  .line-title--in-view .line-title__line,
+  .line-title--in-view .line-title__text {
+    animation: none;
+  }
+}
+
+/* Lock page scroll while an overlay is open */
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
 }

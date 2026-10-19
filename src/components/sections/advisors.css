@@ -1,0 +1,225 @@
+.advisors {
+  width: 100%;
+  overflow-x: clip;
+  padding-block: var(--section-gap);
+  background-color: var(--brand-bg-light);
+  color: var(--brand-text-light);
+}
+.advisors__header {
+  max-width: 900px;
+  margin-bottom: 56px;
+}
+.advisors__header h2 {
+  margin-bottom: 24px;
+}
+.advisors__intro {
+  color: rgba(51, 51, 51, 0.8);
+}
+.advisors__columns {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 60px;
+  align-items: stretch;
+}
+.advisors__images-column {
+  position: relative;
+  min-width: 0;
+}
+.advisors__images-wrapper {
+  position: relative;
+  width: 100%;
+  height: 408px;
+  cursor: grab;
+  user-select: none;
+  /* lets the recycled items run off to the left edge of the viewport */
+  clip-path: inset(0 0 0 -100vw);
+}
+.advisors__track {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.advisor-image {
+  flex-shrink: 0;
+  width: 205px;
+  height: 277px;
+  opacity: 0.7;
+  cursor: pointer;
+  background-color: #dee0e1;
+  background-position: center top;
+  background-size: cover;
+  transition:
+    width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+    height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.advisor-image.is-active {
+  width: 335px;
+  height: 408px;
+  opacity: 1;
+  cursor: grab;
+}
+
+.advisors__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  height: 40px;
+  margin-top: 25px;
+}
+.advisors__pagination-slot--mobile {
+  display: none;
+}
+.advisors__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dee0e1;
+  transition: all 0.3s ease;
+}
+.advisors__dot:hover {
+  background-color: rgba(44, 44, 44, 0.35);
+}
+.advisors__dot.is-active {
+  width: 24px;
+  border-radius: 5px;
+  background-color: var(--dark-black);
+}
+
+.advisors__content-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.advisor-card {
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.advisor-card.is-active {
+  display: flex;
+  opacity: 1;
+  animation: advisor-card-in 0.3s ease;
+}
+@keyframes advisor-card-in {
+  from {
+    opacity: 0;
+  }
+}
+.advisor-card__title {
+  margin-bottom: 8px;
+}
+.advisor-card__role {
+  margin-bottom: 24px;
+  color: rgba(51, 51, 51, 0.8);
+  font-size: 18px;
+}
+.advisor-card__text {
+  margin-bottom: 24px;
+  color: rgba(51, 51, 51, 0.85);
+}
+.advisors__navigation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  margin-top: auto;
+}
+.advisors__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--body-text);
+  transition: opacity 0.3s ease;
+}
+.advisors__arrow svg {
+  width: 32px;
+  height: 32px;
+}
+.advisors__arrow:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 991px) {
+  .advisors__columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .advisors__images-wrapper {
+    height: 294px;
+  }
+  .advisors__track {
+    gap: 20px;
+  }
+  .advisor-image {
+    width: 150px;
+    height: 180px;
+  }
+  .advisor-image.is-active {
+    width: 220px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .advisors__header {
+    margin-bottom: 30px;
+  }
+  .advisors__columns {
+    gap: 30px;
+  }
+  .advisors__images-wrapper {
+    height: 304px;
+    overflow: hidden;
+    clip-path: none;
+  }
+  .advisors__track {
+    gap: 15px;
+  }
+  .advisor-image,
+  .advisor-image.is-active {
+    width: 205px;
+    height: 282px;
+    opacity: 1;
+  }
+  .advisor-card__title {
+    margin: 0;
+  }
+  .advisor-card__role {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .advisor-card__text {
+    margin-bottom: 16px;
+  }
+  .advisors__navigation {
+    height: auto;
+    margin-top: 8px;
+  }
+  .advisors__arrow,
+  .advisors__pagination-slot--desktop {
+    display: none;
+  }
+  .advisors__pagination-slot--mobile {
+    display: block;
+  }
+  .advisors__pagination {
+    justify-content: flex-start;
+    height: auto;
+    margin-top: 0;
+  }
+}
+
+.advisor-card__cta {
+  align-self: flex-start;
+  margin-bottom: 24px;
+}

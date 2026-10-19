@@ -1,0 +1,219 @@
+.programs {
+  padding-block: var(--section-gap);
+  background-color: var(--body-background);
+  overflow-x: clip;
+}
+.programs__layout {
+  display: flex;
+  flex-direction: column;
+}
+.programs__header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 42px;
+}
+.programs__cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.programs__title {
+  color: var(--brand-text-light);
+}
+.programs__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+.programs__subtitle {
+  flex: 1;
+  min-width: 0;
+  color: #555;
+}
+.programs__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--brand-text-light);
+  transition: opacity 0.2s ease;
+}
+.programs__all:hover {
+  opacity: 0.75;
+}
+
+.programs__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.programs__filters-wrapper {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.programs__filters-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.programs__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-button {
+  border: none !important;
+}
+.filter-button.is-active,
+.filter-button.is-active:hover {
+  background-color: #eee;
+  color: var(--brand-text-light);
+}
+.programs__arrows {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.programs__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--brand-text-light);
+  transition: opacity 0.2s ease;
+}
+.programs__arrow svg {
+  width: 32px;
+  height: 32px;
+}
+.programs__arrow:hover {
+  opacity: 0.7;
+}
+.programs__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.programs__carousel {
+  width: 100%;
+}
+.program-card {
+  width: 320px;
+  flex-shrink: 0;
+  list-style: none;
+}
+.program-card__link {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.program-card__media {
+  position: relative;
+  width: 320px;
+  height: 350px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 8px;
+  background-color: var(--body-background-light);
+  background-position: center;
+  background-size: cover;
+}
+.program-card__preview-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease-in-out;
+}
+.program-card__preview-video.is-visible {
+  opacity: 1;
+}
+.program-card__type {
+  margin-bottom: 24px;
+  color: #555;
+}
+.program-card__title {
+  margin-bottom: 16px;
+  color: var(--brand-text-light);
+  text-transform: uppercase;
+}
+.program-card__excerpt {
+  color: #555;
+}
+
+.programs__dots {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+.programs__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #dee0e1;
+  transition:
+    width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.28s;
+}
+.programs__dot.is-active {
+  width: 24px;
+  background-color: var(--dark-black);
+}
+
+@media (max-width: 991px) {
+  .programs__filters-wrapper {
+    margin-inline: -24px;
+    padding-inline: 24px;
+    width: calc(100% + 48px);
+  }
+  .programs__filters {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 768px) {
+  .programs__header {
+    margin-bottom: 32px;
+  }
+  .programs__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  .programs__controls {
+    display: block;
+  }
+  .programs__arrows {
+    display: none;
+  }
+  .programs__dots {
+    display: flex;
+  }
+  .program-card,
+  .program-card__media {
+    width: 280px;
+  }
+  .program-card__media {
+    height: 320px;
+  }
+}
+
+.programs--light {
+  background-color: var(--brand-bg-light);
+}
+.programs__controls--no-filters {
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .programs__controls--no-filters {
+    display: none;
+  }
+}

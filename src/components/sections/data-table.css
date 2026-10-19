@@ -1,0 +1,45 @@
+.data-table {
+  padding-block: var(--section-gap);
+  color: var(--brand-text-light);
+}
+.data-table__text {
+  max-width: 720px;
+  margin-top: 24px;
+  color: #555;
+}
+.data-table__scroll {
+  margin-top: 48px;
+  overflow-x: auto;
+}
+.data-table table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+.data-table th,
+.data-table td {
+  padding: 20px 16px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+  font-weight: 300;
+}
+.data-table thead th {
+  color: #8e8e8e;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.data-table tbody th {
+  font-size: 20px;
+  font-weight: 400;
+}
+.data-table tbody td {
+  font-size: 20px;
+}
+.data-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+.data-table tbody tr:hover {
+  background: var(--brand-bg-light);
+}

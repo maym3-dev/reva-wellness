@@ -1,0 +1,77 @@
+.market-proof-title {
+  padding-top: 144px;
+  padding-bottom: 144px;
+}
+.market-proof {
+  padding-bottom: 144px;
+  overflow: hidden;
+}
+.market-proof__swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+.market-proof__swiper .swiper-slide {
+  width: 350px;
+  height: auto;
+}
+.proof-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 24px;
+}
+/* Wordmark stand-ins for press logos — swap for real SVG logos */
+.proof-item__logo {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 32px;
+  color: #111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+.proof-item__text {
+  color: var(--brand-text-light);
+}
+.market-proof__dots {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .market-proof__swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
+}
+@media (max-width: 991px) {
+  .market-proof-title {
+    padding-block: 104px;
+  }
+  .market-proof {
+    padding-bottom: 104px;
+  }
+}
+@media (max-width: 767px) {
+  .market-proof__swiper .swiper-slide {
+    width: 100%;
+  }
+  .market-proof__dots {
+    position: static !important;
+    display: flex !important;
+    gap: 8px;
+    margin-top: 25px;
+  }
+  .market-proof__dots .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    margin: 0 !important;
+    background: #dee0e1;
+    opacity: 1;
+    transition: width 0.28s ease;
+  }
+  .market-proof__dots .swiper-pagination-bullet-active {
+    width: 27px;
+    border-radius: 5px;
+    background: var(--dark-black);
+  }
+}
